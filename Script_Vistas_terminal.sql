@@ -4,19 +4,8 @@
 -- ------------------------------------------------------
 -- Server version	8.0.29
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
 --
--- Temporary view structure for view `vista_cargamentos_cliente_china`
+-- view structure for view `vista_cargamentos_cliente_china`
 --
 
 DROP TABLE IF EXISTS `vista_cargamentos_cliente_china`;
@@ -36,7 +25,7 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `vista_cargamentos_crudos_merey_dco`
+--  view structure for view `vista_cargamentos_crudos_merey_dco`
 --
 
 DROP TABLE IF EXISTS `vista_cargamentos_crudos_merey_dco`;
@@ -56,7 +45,7 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `vista_productos_mayor_inventario`
+-- view structure for view `vista_productos_mayor_inventario`
 --
 
 DROP TABLE IF EXISTS `vista_productos_mayor_inventario`;
@@ -72,7 +61,7 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `vista_productos_mayor_precio`
+-- view structure for view `vista_productos_mayor_precio`
 --
 
 DROP TABLE IF EXISTS `vista_productos_mayor_precio`;
@@ -90,7 +79,7 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `vista_volumenes_mayores_cargamentos`
+-- view structure for view `vista_volumenes_mayores_cargamentos`
 --
 
 DROP TABLE IF EXISTS `vista_volumenes_mayores_cargamentos`;
@@ -122,7 +111,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vista_cargamentos_cliente_china` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque_IMO` = `e`.`ID_buque_IMO`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where (`c`.`nombre_cliente` like 'china%') order by `d_e`.`ID_detalle_embarque` */;
+/*!50001 VIEW `vista_cargamentos_cliente_china` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque` = `e`.`ID_buque`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where (`c`.`nombre_cliente` like 'china%') order by `d_e`.`ID_detalle_embarque` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -140,7 +129,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vista_cargamentos_crudos_merey_dco` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque_IMO` = `e`.`ID_buque_IMO`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where ((`p`.`nombre_producto` like 'mer%') or (`p`.`nombre_producto` like 'd%')) order by `d_e`.`ID_detalle_embarque` */;
+/*!50001 VIEW `vista_cargamentos_crudos_merey_dco` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque` = `e`.`ID_buque`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where ((`p`.`nombre_producto` like 'mer%') or (`p`.`nombre_producto` like 'd%')) order by `d_e`.`ID_detalle_embarque` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -194,7 +183,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vista_volumenes_mayores_cargamentos` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque_IMO` = `e`.`ID_buque_IMO`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where (`f`.`volumen_total_cargado_bls` >= 1700000) order by `d_e`.`ID_detalle_embarque` */;
+/*!50001 VIEW `vista_volumenes_mayores_cargamentos` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque` = `e`.`ID_buque`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where (`f`.`volumen_total_cargado_bls` >= 1700000) order by `d_e`.`ID_detalle_embarque` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -207,5 +196,7 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-10-02 15:04:05
 
 -- Dump completed on 2022-08-24 17:08:46

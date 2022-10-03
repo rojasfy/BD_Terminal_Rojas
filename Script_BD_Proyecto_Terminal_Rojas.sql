@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: terminal
+-- Host: localhost    Database: proyecto_terminal
 -- ------------------------------------------------------
 -- Server version	8.0.29
 
@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `buque`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `buque` (
-  `ID_buque_IMO` int NOT NULL,
+  `ID_buque` int NOT NULL AUTO_INCREMENT,
   `IMO` int NOT NULL,
   `nombre_buque` varchar(100) NOT NULL,
   `categoria_buque` varchar(150) NOT NULL,
@@ -33,8 +33,8 @@ CREATE TABLE `buque` (
   `largo_total` decimal(6,2) NOT NULL,
   `ancho_total` decimal(6,2) NOT NULL,
   `ano_construccion` int NOT NULL,
-  PRIMARY KEY (`ID_buque_IMO`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`ID_buque`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `buque` (
 
 LOCK TABLES `buque` WRITE;
 /*!40000 ALTER TABLE `buque` DISABLE KEYS */;
-INSERT INTO `buque` VALUES (1,9013749,'OLYMPIC LOYALTYC II','Crude Oil Tanker','VLCC','Comoros [KM]',303184.00,331.92,57.99,1993),(2,9157777,'EUROPRIDE','Oil Products Tanker','Aframax','Comoros [KM]',99997.00,243.00,42.00,1998),(3,9158147,'CAP JEAN','Crude Oil Tanker','Suezmax','Palau [PW]',146643.00,274.00,47.80,1998),(4,9176034,'EAGLE AUGUSTA','Crude Oil Tanker','Aframax',' St Kitts Nevis [KN]',105345.00,243.55,42.00,1999),(5,9182318,'C.DREAM','Crude Oil Tanker','VLCC','Thailand [TH]',298570.00,332.95,60.00,2000),(6,9187772,'NEW PAROS','Crude Oil Tanker','Aframax','Panama [PA]',107181.00,246.80,42.00,1998),(7,9236250,'poseidon i','Crude Oil Tanker','VLCC','Panama [PA]',305796.00,332.00,58.05,2002),(8,9247883,'MORNING GLORY','Oil Products Tanker','Aframax','Palau [PW]',99990.00,244.41,41.10,2002),(9,9255672,'ISABELLA','Crude Oil Tanker','Aframax','Malta [MT]',105330.00,244.00,42.03,2004),(10,9255672,'RIDGEBURY SALLY B','Crude Oil Tanker','Aframax','Panama [PA]',105672.00,239.00,42.00,2003),(11,9258002,'KAZAN','Crude Oil Tanker','Aframax','Liberia [LR]',115727.00,250.00,44.04,2003),(12,9281009,'EVEREST SPIRIT','Crude Oil Tanker','Aframax','Bahamas [BS]',115047.00,249.90,44.03,2004),(13,9290309,'seagrace','Crude Oil Tanker','Aframax','Malta [MT]',105941.00,243.96,42.00,2004),(14,9337183,'COSJADE LAKE','Crude Oil Tanker','VLCC','Hong Kong [HK]',298216.00,329.99,60.04,2009),(15,9380740,'CAP THEODORA','Crude Oil Tanker','Suezmax','Greece [GR]',158819.00,274.20,48.00,2008),(16,9380740,'XIN TONG YAN','Oil Products Tanker','VLCC','Hong Kong [HK]',297183.00,330.00,60.00,2009),(17,9422196,'EAGLE KINA','Crude Oil Tanker','Aframax','Singapore [SG]',107481.00,244.00,42.03,2011),(18,9422457,'SCF BAIKAL','Crude Oil Tanker','Suezmax','Liberia [LR]',158097.00,274.34,48.05,2010),(19,9552496,'TEREPAIMA','Crude Oil Tanker','Aframax','Venezuela [VE]',104736.00,229.00,42.04,2011),(20,9709075,'ANTIGONE','Crude Oil Tanker','VLCC','Greece [GR]',299421.00,333.09,60.04,2015);
+INSERT INTO `buque` VALUES (1,9013749,'OLYMPIC LOYALTYC II','Crude Oil Tanker','VLCC','Comoros [KM]',303184.00,331.92,57.99,1993),(2,9157777,'EUROPRIDE','Oil Products Tanker','Aframax','Comoros [KM]',99997.00,243.00,42.00,1998),(3,9158147,'CAP JEAN','Crude Oil Tanker','Suezmax','Palau [PW]',146643.00,274.00,47.80,1998),(4,9176034,'EAGLE AUGUSTA','Crude Oil Tanker','Aframax','St Kitts Nevis [KN]',105345.00,243.55,42.00,1999),(5,9182318,'C.DREAM','Crude Oil Tanker','VLCC','Thailand [TH]',298570.00,332.95,60.00,2000),(6,9187772,'NEW PAROS','Crude Oil Tanker','Aframax','Panama [PA]',107181.00,246.80,42.00,1998),(7,9236250,'POSEIDON I','Crude Oil Tanker','VLCC','Panama [PA]',305796.00,332.00,58.05,2002),(8,9247883,'MORNING GLORY','Oil Products Tanker','Aframax','Palau [PW]',99990.00,244.41,41.10,2002),(9,9255672,'ISABELLA','Crude Oil Tanker','Aframax','Malta [MT]',105330.00,244.00,42.03,2004),(10,9257010,'RIDGEBURY SALLY B','Crude Oil Tanker','Aframax','Panama [PA]',105672.00,239.00,42.00,2003),(11,9258002,'KAZAN','Crude Oil Tanker','Aframax','Liberia [LR]',115727.00,250.00,44.04,2003),(12,9281009,'EVEREST SPIRIT','Crude Oil Tanker','Aframax','Bahamas [BS]',115047.00,249.90,44.03,2004),(13,9290309,'SEAGRACE','Crude Oil Tanker','Aframax','Malta [MT]',105941.00,243.96,42.00,2004),(14,9337183,'COSJADE LAKE','Crude Oil Tanker','VLCC','Hong Kong [HK]',298216.00,329.99,60.04,2009),(15,9380740,'CAP THEODORA','Crude Oil Tanker','Suezmax','Greece [GR]',158819.00,274.20,48.00,2008),(16,9389758,'XIN TONG YAN','Oil Products Tanker','VLCC','Hong Kong [HK]',297183.00,330.00,60.00,2009),(17,9422196,'EAGLE KINA','Crude Oil Tanker','Aframax','Singapore [SG]',107481.00,244.00,42.03,2011),(18,9422457,'SCF BAIKAL','Crude Oil Tanker','Suezmax','Liberia [LR]',158097.00,274.34,48.05,2010),(19,9552496,'TEREPAIMA','Crude Oil Tanker','Aframax','Venezuela [VE]',104736.00,229.00,42.04,2011),(20,9709075,'ANTIGONE','Crude Oil Tanker','VLCC','Greece [GR]',299421.00,333.09,60.04,2015);
 /*!40000 ALTER TABLE `buque` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,7 +133,7 @@ CREATE TABLE `detalle_embarque` (
 
 LOCK TABLES `detalle_embarque` WRITE;
 /*!40000 ALTER TABLE `detalle_embarque` DISABLE KEYS */;
-INSERT INTO `detalle_embarque` VALUES (1,1,1,1,1100.00,1031468.00,1,1),(2,1,2,4,20.00,872850.00,5,1),(4,3,1,2,0.00,549169.00,3,4),(5,4,1,3,0.00,298414.00,2,3),(7,6,1,4,0.00,495839.00,5,5),(8,7,1,3,0.00,497890.00,2,3),(9,8,1,5,0.00,632323.00,4,3),(10,9,1,2,50.00,500574.00,3,4),(11,9,2,3,15.00,475610.00,2,4),(13,11,1,2,0.00,1000099.00,3,4),(16,14,1,3,30.00,943771.00,2,4),(17,15,1,2,0.00,515474.00,3,3),(20,18,1,4,10.00,595006.00,5,5),(21,19,1,5,0.00,541831.00,4,3),(22,20,1,3,0.00,510512.00,2,3);
+INSERT INTO `detalle_embarque` VALUES (1,1,1,1,1100.00,1031468.00,1,1),(2,1,2,4,20.00,872850.00,5,1),(3,2,1,1,0.00,1788166.00,1,2),(4,3,1,2,0.00,549169.00,3,4),(5,4,1,3,0.00,298414.00,2,3),(6,5,1,4,0.00,449285.00,5,5),(7,6,1,4,0.00,495839.00,5,5),(8,7,1,3,0.00,497890.00,2,3),(9,8,1,5,0.00,632323.00,4,3),(10,9,1,2,50.00,500574.00,3,4),(11,9,2,3,15.00,475610.00,2,4),(12,10,1,1,0.00,1791436.00,1,2),(13,11,1,2,0.00,1000099.00,3,4),(14,12,1,1,0.00,1797971.00,1,1),(15,13,1,4,100.00,461249.00,5,5),(16,14,1,3,30.00,943771.00,2,4),(17,15,1,2,0.00,515474.00,3,3),(18,16,1,4,0.00,468362.00,5,3),(19,17,1,1,45.00,1784276.00,1,2),(20,18,1,4,10.00,595006.00,5,5),(21,19,1,5,0.00,541831.00,4,3),(22,20,1,3,0.00,510512.00,2,3);
 /*!40000 ALTER TABLE `detalle_embarque` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +172,7 @@ CREATE TABLE `detalle_factura` (
 
 LOCK TABLES `detalle_factura` WRITE;
 /*!40000 ALTER TABLE `detalle_factura` DISABLE KEYS */;
-INSERT INTO `detalle_factura` VALUES (1,1,1,1,1,1030368.00,41.20,0.10,38206045.44),(2,1,4,5,1,872830.00,32.30,0.15,23963547.65),(4,3,2,3,4,549169.00,54.60,0.12,26386472.11),(5,4,3,2,3,298414.00,60.70,0.11,16121219.52),(7,6,4,5,5,495839.00,32.30,0.15,13613259.75),(8,7,3,2,3,497890.00,60.70,0.11,26897511.47),(9,8,5,4,3,632323.00,35.50,0.20,17957973.20),(10,9,2,3,4,500524.00,54.60,0.12,24049177.15),(11,9,3,2,4,475595.00,60.70,0.11,25693068.69),(13,11,2,3,4,1000099.00,54.60,0.12,48052756.75),(16,14,3,2,4,943741.00,60.70,0.11,50983720.04),(17,15,2,3,3,515474.00,54.60,0.12,24767494.75),(20,18,4,5,5,594996.00,32.30,0.15,16335615.18),(21,19,5,4,3,541831.00,35.50,0.20,15388000.40),(22,20,3,2,3,510512.00,60.70,0.11,27579389.78);
+INSERT INTO `detalle_factura` VALUES (1,1,1,1,1,1030368.00,41.20,0.10,38206045.44),(2,1,4,5,1,872830.00,32.30,0.15,23963547.65),(3,2,1,1,2,1788166.00,41.20,0.10,66305195.28),(4,3,2,3,4,549169.00,54.60,0.12,26386472.11),(5,4,3,2,3,298414.00,60.70,0.11,16121219.52),(6,5,4,5,5,449285.00,32.30,0.15,12335119.68),(7,6,4,5,5,495839.00,32.30,0.15,13613259.75),(8,7,3,2,3,497890.00,60.70,0.11,26897511.47),(9,8,5,4,3,632323.00,35.50,0.20,17957973.20),(10,9,2,3,4,500524.00,54.60,0.12,24049177.15),(11,9,3,2,4,475595.00,60.70,0.11,25693068.69),(12,10,1,1,2,1791436.00,41.20,0.10,66426446.88),(13,11,2,3,4,1000099.00,54.60,0.12,48052756.75),(14,12,1,1,1,1797971.00,41.20,0.10,66668764.68),(15,13,4,5,5,461149.00,32.30,0.15,12660845.80),(16,14,3,2,4,943741.00,60.70,0.11,50983720.04),(17,15,2,3,3,515474.00,54.60,0.12,24767494.75),(18,16,4,5,3,468362.00,32.30,0.15,12858878.71),(19,17,1,1,2,1784231.00,41.20,0.10,66159285.48),(20,18,4,5,5,594996.00,32.30,0.15,16335615.18),(21,19,5,4,3,541831.00,35.50,0.20,15388000.40),(22,20,3,2,3,510512.00,60.70,0.11,27579389.78);
 /*!40000 ALTER TABLE `detalle_factura` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,7 +202,7 @@ CREATE TABLE `detalle_nominacion` (
 
 LOCK TABLES `detalle_nominacion` WRITE;
 /*!40000 ALTER TABLE `detalle_nominacion` DISABLE KEYS */;
-INSERT INTO `detalle_nominacion` VALUES (1,1,1,1000000.00),(2,1,4,900000.00),(4,3,2,550000.00),(5,4,3,300000.00),(7,6,4,500000.00),(8,7,3,500000.00),(9,8,5,600000.00),(10,9,2,500000.00),(11,9,3,500000.00),(13,11,2,1000000.00),(16,14,3,1000000.00),(17,15,2,550000.00),(20,18,4,600000.00),(21,19,5,600000.00),(22,20,3,500000.00);
+INSERT INTO `detalle_nominacion` VALUES (1,1,1,1000000.00),(2,1,4,900000.00),(3,2,1,1900000.00),(4,3,2,550000.00),(5,4,3,300000.00),(6,5,4,500000.00),(7,6,4,500000.00),(8,7,3,500000.00),(9,8,5,600000.00),(10,9,2,500000.00),(11,9,3,500000.00),(12,10,1,1800000.00),(13,11,2,1000000.00),(14,12,1,1800000.00),(15,13,4,500000.00),(16,14,3,1000000.00),(17,15,2,550000.00),(18,16,4,500000.00),(19,17,1,1800000.00),(20,18,4,600000.00),(21,19,5,600000.00),(22,20,3,500000.00);
 /*!40000 ALTER TABLE `detalle_nominacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,7 +217,7 @@ CREATE TABLE `embarque` (
   `ID_embarque` int NOT NULL AUTO_INCREMENT,
   `numero_embarque` varchar(45) NOT NULL,
   `Fecha_Ventana_carga` varchar(100) NOT NULL,
-  `ID_buque_IMO` int NOT NULL,
+  `ID_buque` int NOT NULL,
   `ID_Cliente` int NOT NULL,
   `fechayhora_atraque_buque` datetime NOT NULL,
   `fechayhora_conexión` datetime NOT NULL,
@@ -226,9 +226,9 @@ CREATE TABLE `embarque` (
   `fechayhora_desconexion` datetime NOT NULL,
   `fechayhora_desatraque_buque` datetime NOT NULL,
   PRIMARY KEY (`ID_embarque`),
-  KEY `FK_embarque_buque_ID_idx` (`ID_buque_IMO`),
+  KEY `FK_embarque_buque_ID_idx` (`ID_buque`),
   KEY `FK_embarque_clientes_ID_idx` (`ID_Cliente`),
-  CONSTRAINT `FK_embarque_buque_ID` FOREIGN KEY (`ID_buque_IMO`) REFERENCES `buque` (`ID_buque_IMO`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_embarque_buque_ID` FOREIGN KEY (`ID_buque`) REFERENCES `buque` (`ID_buque`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_embarque_clientes_ID` FOREIGN KEY (`ID_Cliente`) REFERENCES `cliente` (`ID_cliente`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -239,7 +239,7 @@ CREATE TABLE `embarque` (
 
 LOCK TABLES `embarque` WRITE;
 /*!40000 ALTER TABLE `embarque` DISABLE KEYS */;
-INSERT INTO `embarque` VALUES (1,'7320','2021/10/05-07',1,1,'2021-10-07 22:24:00','2021-10-07 23:18:00','2021-10-08 01:18:00','2021-10-11 07:24:00','2021-10-11 10:36:00','2021-10-11 20:48:00'),(3,'1546','2021/10/27-29',17,3,'2021-10-31 19:18:00','2021-10-31 20:36:00','2021-11-01 03:00:00','2021-11-02 09:30:00','2021-11-02 14:30:00','2021-11-02 18:18:00'),(4,'7340','2021/11/25-27',2,4,'2021-11-03 12:42:00','2021-11-03 16:12:00','2021-11-04 06:00:00','2021-11-04 23:54:00','2021-11-05 00:42:00','2021-11-05 17:18:00'),(6,'1354','2021/11/26-28',6,6,'2021-11-10 19:06:00','2021-11-10 22:15:00','2021-11-13 16:18:00','2021-11-14 19:12:00','2021-11-14 20:35:00','2021-11-14 21:54:00'),(7,'7350','2021/11/11-13',19,4,'2021-11-14 08:15:00','2021-11-15 17:20:00','2021-11-16 20:45:00','2021-11-17 16:30:00','2021-11-17 17:10:00','2021-11-18 01:55:00'),(8,'7352','2021/11/10-12',11,7,'2021-11-18 02:00:00','2021-11-18 02:20:00','2021-11-18 14:12:00','2021-11-19 22:54:00','2021-11-19 23:30:00','2021-11-20 09:05:00'),(9,'1551','2021/11/12-14',18,8,'2021-11-17 01:24:00','2021-11-17 03:30:00','2021-11-17 15:30:00','2021-11-19 12:18:00','2021-11-19 15:00:00','2021-11-19 16:00:00'),(11,'1555','2021/11/26-28',15,7,'2021-11-28 18:48:00','2021-11-28 22:00:00','2021-11-29 22:06:00','2021-12-02 04:48:00','2021-12-02 11:00:00','2021-12-02 15:06:00'),(14,'1558','2021/12/08-10',3,7,'2021-12-09 12:18:00','2021-12-09 15:18:00','2021-12-10 03:00:00','2021-12-11 19:18:00','2021-12-12 10:36:00','2021-12-12 17:30:00'),(15,'7374','2021/12/07-09',12,8,'2021-12-14 10:42:00','2021-12-14 11:24:00','2021-12-15 08:24:00','2021-12-16 20:24:00','2021-12-16 21:54:00','2021-12-17 15:56:00'),(18,'1363','2021/12/05-07',6,6,'2021-12-19 14:54:00','2021-12-20 12:24:00','2021-12-20 12:42:00','2021-12-22 00:24:00','2021-12-22 10:00:00','2021-12-22 13:36:00'),(19,'7377','2021/12/16-18',4,7,'2021-12-19 18:30:00','2021-12-19 18:54:00','2021-12-20 21:24:00','2021-12-21 23:48:00','2021-12-22 00:48:00','2021-12-22 08:18:00'),(20,'7379','2021/12/16-18',8,4,'2021-12-22 12:48:00','2021-12-22 13:24:00','2021-12-23 09:00:00','2021-12-24 12:36:00','2021-12-24 15:00:00','2021-12-24 19:55:00');
+INSERT INTO `embarque` VALUES (1,'7320','2021/10/05-07',1,1,'2021-10-07 22:24:00','2021-10-07 23:18:00','2021-10-08 01:18:00','2021-10-11 07:24:00','2021-10-11 10:36:00','2021-10-11 20:48:00'),(2,'7333','2021/10/19-21',20,2,'2021-10-24 09:24:00','2021-10-24 09:42:00','2021-10-24 13:42:00','2021-10-27 19:42:00','2021-10-27 21:24:00','2021-11-28 19:30:00'),(3,'1546','2021/10/27-29',17,3,'2021-10-31 19:18:00','2021-10-31 20:36:00','2021-11-01 03:00:00','2021-11-02 09:30:00','2021-11-02 14:30:00','2021-11-02 18:18:00'),(4,'7340','2021/11/25-27',2,4,'2021-11-03 12:42:00','2021-11-03 16:12:00','2021-11-04 06:00:00','2021-11-04 23:54:00','2021-11-05 00:42:00','2021-11-05 17:18:00'),(5,'1349','2021/11/29-31',9,5,'2021-11-04 15:48:00','2021-11-04 17:42:00','2021-11-04 18:24:00','2021-11-06 00:42:00','2021-11-06 14:30:00','2021-11-06 15:06:00'),(6,'1354','2021/11/26-28',6,6,'2021-11-10 19:06:00','2021-11-10 22:15:00','2021-11-13 16:18:00','2021-11-14 19:12:00','2021-11-14 20:35:00','2021-11-14 21:54:00'),(7,'7350','2021/11/11-13',19,4,'2021-11-14 08:15:00','2021-11-15 17:20:00','2021-11-16 20:45:00','2021-11-17 16:30:00','2021-11-17 17:10:00','2021-11-18 01:55:00'),(8,'7352','2021/11/10-12',11,7,'2021-11-18 02:00:00','2021-11-18 02:20:00','2021-11-18 14:12:00','2021-11-19 22:54:00','2021-11-19 23:30:00','2021-11-20 09:05:00'),(9,'1551','2021/11/12-14',18,8,'2021-11-17 01:24:00','2021-11-17 03:30:00','2021-11-17 15:30:00','2021-11-19 12:18:00','2021-11-19 15:00:00','2021-11-19 16:00:00'),(10,'7351','2021/11/13-15',5,2,'2021-11-16 23:54:00','2021-11-17 00:12:00','2021-11-17 03:54:00','2021-11-20 07:48:00','2021-11-20 13:00:00','2021-11-20 19:00:00'),(11,'1555','2021/11/26-28',15,7,'2021-11-28 18:48:00','2021-11-28 22:00:00','2021-11-29 22:06:00','2021-12-02 04:48:00','2021-12-02 11:00:00','2021-12-02 15:06:00'),(12,'7364','2021/11/20-22',14,2,'2021-11-30 19:30:00','2021-11-30 20:52:00','2021-11-30 23:50:00','2021-12-04 08:48:00','2021-12-04 11:48:00','2021-12-04 17:36:00'),(13,'1359','2021/11/26-28',10,9,'2021-12-03 14:00:00','2021-12-03 16:18:00','2021-12-03 17:00:00','2021-12-04 12:18:00','2021-12-04 17:42:00','2021-12-04 21:30:00'),(14,'1558','2021/12/08-10',3,7,'2021-12-09 12:18:00','2021-12-09 15:18:00','2021-12-10 03:00:00','2021-12-11 19:18:00','2021-12-12 10:36:00','2021-12-12 17:30:00'),(15,'7374','2021/12/07-09',12,8,'2021-12-14 10:42:00','2021-12-14 11:24:00','2021-12-15 08:24:00','2021-12-16 20:24:00','2021-12-16 21:54:00','2021-12-17 15:56:00'),(16,'7376','2021/12/14-16',13,9,'2021-12-17 15:48:00','2021-12-17 16:12:00','2021-12-18 05:42:00','2021-12-19 01:24:00','2021-12-19 04:00:00','2021-12-19 11:00:00'),(17,'7373','2021/12/09-11',16,2,'2021-12-13 17:42:00','2021-12-13 18:12:00','2021-12-14 05:42:00','2021-12-21 19:36:00','2021-12-21 21:00:00','2021-12-22 10:25:00'),(18,'1363','2021/12/05-07',7,6,'2021-12-19 14:54:00','2021-12-20 12:24:00','2021-12-20 12:42:00','2021-12-22 00:24:00','2021-12-22 10:00:00','2021-12-22 13:36:00'),(19,'7377','2021/12/16-18',4,7,'2021-12-19 18:30:00','2021-12-19 18:54:00','2021-12-20 21:24:00','2021-12-21 23:48:00','2021-12-22 00:48:00','2021-12-22 08:18:00'),(20,'7379','2021/12/16-18',8,4,'2021-12-22 12:48:00','2021-12-22 13:24:00','2021-12-23 09:00:00','2021-12-24 12:36:00','2021-12-24 15:00:00','2021-12-24 19:55:00');
 /*!40000 ALTER TABLE `embarque` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,9 +256,9 @@ CREATE TABLE `factura` (
   `fecha_registro_factura` date NOT NULL,
   `ID_embarque` int NOT NULL,
   `ID_cliente` int NOT NULL,
-  `puerto_destino_descarga` varchar(200) NOT NULL,
   `volumen_total_cargado_bls` decimal(15,2) NOT NULL,
   `venta_total_dolar` decimal(20,2) NOT NULL,
+  `puerto_destino_descarga` varchar(200) NOT NULL,
   PRIMARY KEY (`ID_factura`),
   KEY `FK_factura_cliente_ID_idx` (`ID_cliente`),
   KEY `FK_factura_embarque_ID_idx` (`ID_embarque`),
@@ -273,7 +273,7 @@ CREATE TABLE `factura` (
 
 LOCK TABLES `factura` WRITE;
 /*!40000 ALTER TABLE `factura` DISABLE KEYS */;
-INSERT INTO `factura` VALUES (1,'PDV-001','2021-10-11',1,1,'RELIANCE TERMINAL SIKKA, PORT, INDIA',1903198.00,62169593.09),(3,'PC-ZTA-001','2021-11-02',3,3,'LOOP, LA',549169.00,26386472.11),(4,'PP-SHB-001','2021-11-05',4,4,'AMUAY , PORT, VENEZUELA',298414.00,16121219.52),(6,'PSF-DCO-002','2021-11-14',6,6,'STATIA,TERMINAL,NETHERLANDS ANTILLAS',495839.00,13613259.75),(7,'PP-SHB-002','2021-11-18',7,4,'AMUAY , PORT, VENEZUELA',497890.00,26897511.47),(8,'PM-MOR-001','2021-11-20',8,7,'GOOD HOPE, PORT, LOUISIANA, USA',632323.00,17957973.20),(9,'PDV-002','2021-11-19',9,8,'PASCAGOULA, MS,USA',976119.00,49742245.84),(11,'PC-ZTA-002','2021-12-02',11,7,'PORT ARTHUR, TX',1000099.00,48052756.75),(14,'PP-SHB-003','2021-12-12',14,7,'PORT ARTHUR, TX  U.S.A.',943741.00,50983720.04),(15,'PC-ZTA-003','2021-12-17',15,8,'PASCAGOULA,PORT,MISSISSIPPI,USA',515474.00,24767494.75),(18,'PSF-DCO-005','2021-12-22',18,6,'STATIA,TERMINAL,NETHERLANDS ANTI',594996.00,16335615.18),(19,'PM-MOR-002','2021-12-22',19,7,'GOOD HOPE, PORT, LOUISIANA, USA',541831.00,15388000.40),(20,'PP-SHB-004','2021-12-24',20,4,'AMUAY, PORT, VENEZUELA',510512.00,27579389.78);
+INSERT INTO `factura` VALUES (1,'PDV-001','2021-10-11',1,1,1903198.00,62169593.09,'RELIANCE TERMINAL SIKKA, PORT, INDIA'),(2,'PDV-MER-001','2021-11-28',2,2,1788166.00,66305195.28,'ZHANJIANG.PORT,CHINA'),(3,'PC-ZTA-001','2021-11-02',3,3,549169.00,26386472.11,'LOOP, LA'),(4,'PP-SHB-001','2021-11-05',4,4,298414.00,16121219.52,'AMUAY , PORT, VENEZUELA'),(5,'PSF-DCO-001','2021-11-06',5,5,449285.00,12335119.68,'PASCAGOULA,PORT,MISSISSIPPI,USA'),(6,'PSF-DCO-002','2021-11-14',6,6,495839.00,13613259.75,'STATIA,TERMINAL,NETHERLANDS ANTILLAS'),(7,'PP-SHB-002','2021-11-18',7,4,497890.00,26897511.47,'AMUAY , PORT, VENEZUELA'),(8,'PM-MOR-001','2021-11-20',8,7,632323.00,17957973.20,'GOOD HOPE, PORT, LOUISIANA, USA'),(9,'PDV-002','2021-11-19',9,8,976119.00,49742245.84,'PASCAGOULA, MS,USA'),(10,'PDV-MER-002','2021-11-20',10,2,1791436.00,66426446.88,'ESSAR SPM, VADINAR'),(11,'PC-ZTA-002','2021-12-02',11,7,1000099.00,48052756.75,'PORT ARTHUR, TX'),(12,'PDV-MER-003','2021-12-04',12,2,1797971.00,66668764.68,'ZHANJIANG, PORT, CHINA'),(13,'PSF-DCO-003','2021-12-04',13,9,461149.00,12660845.80,'PASCAGOULA,PORT,MISSISSIPPI,USA'),(14,'PP-SHB-003','2021-12-12',14,7,943741.00,50983720.04,'PORT ARTHUR, TX  U.S.A.'),(15,'PC-ZTA-003','2021-12-17',15,8,515474.00,24767494.75,'PASCAGOULA,PORT,MISSISSIPPI,USA'),(16,'PSF-DCO-004','2021-12-19',16,9,468362.00,12858878.71,'CARTAGENA, PORT, SPAIN'),(17,'PDV-MER-004','2021-12-22',17,2,1784231.00,66159285.48,'ZHANJIANG.PORT,CHINA'),(18,'PSF-DCO-005','2021-12-22',18,6,594996.00,16335615.18,'STATIA,TERMINAL,NETHERLANDS ANTI'),(19,'PM-MOR-002','2021-12-22',19,7,541831.00,15388000.40,'GOOD HOPE, PORT, LOUISIANA, USA'),(20,'PP-SHB-004','2021-12-24',20,4,510512.00,27579389.78,'AMUAY, PORT, VENEZUELA');
 /*!40000 ALTER TABLE `factura` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -287,7 +287,7 @@ DROP TABLE IF EXISTS `log_auditoria_terminal_b`;
 CREATE TABLE `log_auditoria_terminal_b` (
   `ID_LOG` int NOT NULL AUTO_INCREMENT,
   `NOMBRE_BUQUE` varchar(100) DEFAULT NULL,
-  `ID_BUQUE_IMO` int NOT NULL,
+  `ID_BUQUE` int NOT NULL,
   `NOMBRE_DE_ACCION` varchar(10) DEFAULT NULL,
   `NOMBRE_TABLA` varchar(50) DEFAULT NULL,
   `USUARIO` varchar(100) DEFAULT NULL,
@@ -318,7 +318,7 @@ CREATE TABLE `log_auditoria_terminal_b_2` (
   `ID_LOG` int NOT NULL AUTO_INCREMENT,
   `NOMBRE_BUQUE_ANTERIOR` varchar(100) DEFAULT NULL,
   `NOMBRE_BUQUE_ACTUAL` varchar(100) DEFAULT NULL,
-  `ID_BUQUE_IMO` int NOT NULL,
+  `ID_BUQUE` int NOT NULL,
   `NOMBRE_DE_ACCION` varchar(10) DEFAULT NULL,
   `NOMBRE_TABLA` varchar(50) DEFAULT NULL,
   `USUARIO` varchar(100) DEFAULT NULL,
@@ -383,14 +383,14 @@ CREATE TABLE `nominacion` (
   `puerto_destino_final` varchar(200) NOT NULL,
   `ID_embarque` int NOT NULL,
   `ID_cliente` int NOT NULL,
-  `ID_buque_IMO` int NOT NULL,
+  `ID_buque` int NOT NULL,
   `ID_puerto_carga` int NOT NULL,
   PRIMARY KEY (`ID_nominacion`),
   KEY `FK_nominacion_embarque_ID_idx` (`ID_embarque`),
   KEY `FK_nominacion_cliente_ID_idx` (`ID_cliente`),
-  KEY `FK_nominacion_buque_ID_idx` (`ID_buque_IMO`),
+  KEY `FK_nominacion_buque_ID_idx` (`ID_buque`),
   KEY `FK_nominacion_puertos_ID_idx` (`ID_puerto_carga`),
-  CONSTRAINT `FK_nominacion_buque_ID` FOREIGN KEY (`ID_buque_IMO`) REFERENCES `buque` (`ID_buque_IMO`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_nominacion_buque_ID` FOREIGN KEY (`ID_buque`) REFERENCES `buque` (`ID_buque`),
   CONSTRAINT `FK_nominacion_cliente_ID` FOREIGN KEY (`ID_cliente`) REFERENCES `cliente` (`ID_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_nominacion_embarque_ID` FOREIGN KEY (`ID_embarque`) REFERENCES `embarque` (`ID_embarque`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_nominacion_puertos_ID` FOREIGN KEY (`ID_puerto_carga`) REFERENCES `puertos` (`ID_puerto`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -403,7 +403,7 @@ CREATE TABLE `nominacion` (
 
 LOCK TABLES `nominacion` WRITE;
 /*!40000 ALTER TABLE `nominacion` DISABLE KEYS */;
-INSERT INTO `nominacion` VALUES (1,'PDV7320','2021-09-10','2021/10/05-07','RELIANCE TERMINAL SIKKA, PORT, INDIA',1,1,1,1),(3,'PC1546','2021-09-28','2021/10/27-29','LOOP, LA',3,3,17,4),(4,'PP7340','2021-09-25','2021/11/25-27','AMUAY , PORT, VENEZUELA',4,4,2,3),(7,'PP7350','2021-10-15','2021/11/11-13','AMUAY , PORT, VENEZUELA',7,4,19,3),(8,'PM7352','2021-10-13','2021/11/10-12','GOOD HOPE, PORT, LOUISIANA, USA',8,7,11,3),(9,'PC1551','2021-10-14','2021/11/12-14','PASCAGOULA, MS,USA',9,8,18,4),(11,'PC1555','2021-10-25','2021/11/26-28','PORT ARTHUR, TX',11,7,15,4),(14,'PP1558','2021-11-05','2021/12/08-10','PORT ARTHUR, TX  U.S.A.',14,7,3,4),(15,'PC7374','2021-11-08','2021/12/07-09','PASCAGOULA,PORT,MISSISSIPPI,USA',15,8,12,3),(18,'PSF1363','2021-11-09','2021/12/05-07','STATIA,TERMINAL,NETHERLANDS ANTI',18,6,6,5),(19,'PM7377','2021-11-18','2021/12/16-18','GOOD HOPE, PORT, LOUISIANA, USA',19,7,4,3),(20,'PP7379','2021-11-16','2021/12/16-18','AMUAY, PORT, VENEZUELA',20,4,8,3);
+INSERT INTO `nominacion` VALUES (1,'PDV7320','2021-09-10','2021/10/05-07','RELIANCE TERMINAL SIKKA, PORT, INDIA',1,1,1,1),(2,'PDV7333','2021-09-25','2021/10/19-21','ZHANJIANG.PORT,CHINA',2,2,20,2),(3,'PC1546','2021-09-28','2021/10/27-29','LOOP, LA',3,3,17,4),(4,'PP7340','2021-09-25','2021/11/25-27','AMUAY , PORT, VENEZUELA',4,4,2,3),(5,'PSF1349','2021-09-30','2021/11/29-31','PASCAGOULA,PORT,MISSISSIPPI,USA',5,5,9,5),(6,'PSF1354','2021-10-01','2021/11/26-28','STATIA,TERMINAL,NETHERLANDS ANTILLAS',6,6,6,5),(7,'PP7350','2021-10-15','2021/11/11-13','AMUAY , PORT, VENEZUELA',7,4,19,3),(8,'PM7352','2021-10-13','2021/11/10-12','GOOD HOPE, PORT, LOUISIANA, USA',8,7,11,3),(9,'PC1551','2021-10-14','2021/11/12-14','PASCAGOULA, MS,USA',9,8,18,4),(10,'PDV7351','2021-10-16','2021/11/13-15','ESSAR SPM, VADINAR',10,2,5,2),(11,'PC1555','2021-10-25','2021/11/26-28','PORT ARTHUR, TX',11,7,15,4),(12,'PDV7364','2021-10-23','2021/11/20-22','ZHANJIANG, PORT, CHINA',12,2,14,1),(13,'PSF1359','2021-10-27','2021/11/26-28','PASCAGOULA,PORT,MISSISSIPPI,USA',13,9,10,5),(14,'PP1558','2021-11-05','2021/12/08-10','PORT ARTHUR, TX  U.S.A.',14,7,3,4),(15,'PC7374','2021-11-08','2021/12/07-09','PASCAGOULA,PORT,MISSISSIPPI,USA',15,8,12,3),(16,'PSF7376','2021-11-15','2021/12/14-16','CARTAGENA, PORT, SPAIN',16,9,13,3),(17,'PDV7373','2021-11-13','2021/12/09-11','ZHANJIANG.PORT,CHINA',17,2,16,2),(18,'PSF1363','2021-11-09','2021/12/05-07','STATIA,TERMINAL,NETHERLANDS ANTI',18,6,7,5),(19,'PM7377','2021-11-18','2021/12/16-18','GOOD HOPE, PORT, LOUISIANA, USA',19,7,4,3),(20,'PP7379','2021-11-16','2021/12/16-18','AMUAY, PORT, VENEZUELA',20,4,8,3);
 /*!40000 ALTER TABLE `nominacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -599,7 +599,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vista_cargamentos_cliente_china` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque_IMO` = `e`.`ID_buque_IMO`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where (`c`.`nombre_cliente` like 'china%') order by `d_e`.`ID_detalle_embarque` */;
+/*!50001 VIEW `vista_cargamentos_cliente_china` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque` = `e`.`ID_buque`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where (`c`.`nombre_cliente` like 'china%') order by `d_e`.`ID_detalle_embarque` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -617,7 +617,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vista_cargamentos_crudos_merey_dco` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque_IMO` = `e`.`ID_buque_IMO`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where ((`p`.`nombre_producto` like 'mer%') or (`p`.`nombre_producto` like 'd%')) order by `d_e`.`ID_detalle_embarque` */;
+/*!50001 VIEW `vista_cargamentos_crudos_merey_dco` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque` = `e`.`ID_buque`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where ((`p`.`nombre_producto` like 'mer%') or (`p`.`nombre_producto` like 'd%')) order by `d_e`.`ID_detalle_embarque` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -671,7 +671,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vista_volumenes_mayores_cargamentos` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque_IMO` = `e`.`ID_buque_IMO`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where (`f`.`volumen_total_cargado_bls` >= 1700000) order by `d_e`.`ID_detalle_embarque` */;
+/*!50001 VIEW `vista_volumenes_mayores_cargamentos` AS select `e`.`numero_embarque` AS `numero_embarque`,`b`.`nombre_buque` AS `nombre_buque`,`d_e`.`parcela_numero` AS `parcela_numero`,`p`.`nombre_producto` AS `nombre_producto`,`d_e`.`volumen_inicio_carga_bls` AS `volumen_inicio_carga_bls`,`d_e`.`volumen_fin_carga_bls` AS `volumen_fin_carga_bls`,`f`.`volumen_total_cargado_bls` AS `volumen_total_cargado_bls`,`c`.`nombre_cliente` AS `nombre_cliente`,`pv`.`nombre_empresa_proveedor` AS `nombre_empresa_proveedor` from ((((((`detalle_embarque` `d_e` join `embarque` `e` on((`d_e`.`ID_embarque` = `e`.`ID_embarque`))) join `factura` `f` on((`f`.`ID_embarque` = `e`.`ID_embarque`))) join `producto` `p` on((`p`.`ID_producto` = `d_e`.`ID_producto`))) join `buque` `b` on((`b`.`ID_buque` = `e`.`ID_buque`))) join `cliente` `c` on((`c`.`ID_cliente` = `f`.`ID_cliente`))) join `proveedor` `pv` on((`pv`.`ID_empresa_proveedor` = `p`.`ID_empresa_proveedor`))) where (`f`.`volumen_total_cargado_bls` >= 1700000) order by `d_e`.`ID_detalle_embarque` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -685,286 +685,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-31 19:24:39
-
-
--- CREACIÓN DE FUNCIONES
-
--- Funcion 1
-
-drop function if exists FN_CANTIDAD_EMBARQUES ;
-
-delimiter //
-create function FN_CANTIDAD_EMBARQUES(letra_producto varchar(10)) 
-returns INT
-DETERMINISTIC
-begin
- declare cant_embarques int;
- SELECT 
-        count(nombre_producto)
-        into cant_embarques
-    FROM producto p join detalle_embarque d_e on p.ID_producto = d_e.ID_producto
-    WHERE
-        nombre_producto LIKE concat('%',letra_producto,'%');
- return cant_embarques;
-end//
-delimiter ;
-
-select FN_CANTIDAD_EMBARQUES ('d') as cantidad_embarques;
-
-select nombre_producto, FN_CANTIDAD_EMBARQUES (left(nombre_producto,2)) as cantidad_embarques from producto p join detalle_embarque d_e on p.ID_producto = d_e.ID_producto
-group by nombre_producto;
-
-
--- Funcion 2
-
-drop function if exists FN_TOTAL_VOLUMEN_EMBARQUES;
-
-delimiter //
-create function FN_TOTAL_VOLUMEN_EMBARQUES (letra_producto varchar(10)) 
-returns decimal (12,2)
-DETERMINISTIC
-begin
- declare vol_embarques decimal (12,2);
- SELECT 
-        sum(volumen_total_cargado_prod_bls)
-        into vol_embarques
-    FROM producto p join detalle_factura d_f on p.ID_producto = d_f.ID_producto
-    WHERE
-        nombre_producto LIKE concat('%',letra_producto,'%');
- return vol_embarques;
-end//
-delimiter ;
-
-
-select FN_TOTAL_VOLUMEN_EMBARQUES ('z') as volumen_embarques_bls;
-
-select nombre_producto, FN_TOTAL_VOLUMEN_EMBARQUES (left(nombre_producto,2)) as volumen_embarques_bls from producto p join detalle_factura d_f on p.ID_producto = d_f.ID_producto
-group by nombre_producto;
-
--- Funcion 3
-
-drop function if exists FN_TOTAL_VENTA_PRODUCTOS;
-
-delimiter //
-create function FN_TOTAL_VENTA_PRODUCTOS (letra_producto varchar(10)) 
-returns decimal (12,2)
-DETERMINISTIC
-begin
- declare venta_productos decimal (12,2);
- SELECT 
-        sum((volumen_total_cargado_prod_bls*precio_venta_prod_dolar_bl)-((volumen_total_cargado_prod_bls*precio_venta_prod_dolar_bl)*descuento_venta_prod_porc))
-        into venta_productos
-    FROM producto p join detalle_factura d_f on p.ID_producto = d_f.ID_producto
-    WHERE
-        nombre_producto LIKE concat('%',letra_producto,'%');
- return venta_productos;
-end//
-delimiter ;
-
-select FN_TOTAL_VENTA_PRODUCTOS ('z') as venta_producto_dolar;
-
-select nombre_producto, FN_TOTAL_VENTA_PRODUCTOS (left(nombre_producto,2)) as venta_producto_dolar from producto p join detalle_factura d_f on p.ID_producto = d_f.ID_producto
-group by nombre_producto;
-
-
--- CREACIÓN DE STORED PROCEDURES
-
--- 1.- STORED PROCEDURES PARA ORDENAR REGISTROS DE LAS TABLAS DE LA BD TERMINAL 
-
-drop procedure if exists SP_orden_tabla_terminal;
-DELIMITER //
-CREATE PROCEDURE SP_orden_tabla_terminal (in p_name_table varchar(100), 
-in p_campo_order varchar(80), 
-in p_asc_desc varchar(5))
-BEGIN
-set @order_b = concat('select * from', ' ', p_name_table, ' ', 'order by', ' ', p_campo_order, ' ',p_asc_desc);
-PREPARE runSQL_buque FROM @order_b;
-EXECUTE runSQL_buque;
-DEALLOCATE PREPARE runSQL_buque;
-END //
-DELIMITER ;
-set @p_name_table = 'producto';
-set @p_campo_order = 'precio_producto_dolar_bl';
-set @p_asc_desc = 'desc';
-
-call SP_orden_tabla_terminal (@p_name_table, @p_campo_order, @p_asc_desc);
-
-
--- 2.- STORED PROCEDURES PARA INSERTAR REGISTROS EN LA TABLA BUQUE
-
-drop procedure if exists SP_insertar_registro_buque;
-
-DELIMITER //
-CREATE PROCEDURE SP_insertar_registro_buque (in p_ID_buque_IMO int, 
-in p_nombre_buque varchar(100), 
-in p_categoria_buque varchar(150),
-in p_tipo_buque varchar(45), 
-in p_bandera varchar(100),
-in p_TPM decimal(10,2), 
-in p_largo_total decimal(6,2),
-in p_ancho_total decimal(6,2),
-in p_ano_construccion int,
-out estado varchar(250))
-BEGIN
-if(select count(ID_buque_IMO) from buque
-where ID_buque_IMO=p_ID_buque_IMO) = 1 then 
-select 'IMO del buque ya existe, no es posible insertar valores' into estado;
-else 
-insert into buque (ID_buque_IMO, nombre_buque, categoria_buque, tipo_buque, bandera, TPM, largo_total, ancho_total, ano_construccion) 
-VALUES (p_ID_buque_IMO, p_nombre_buque, p_categoria_buque, p_tipo_buque, p_bandera, p_TPM, p_largo_total, p_ancho_total, p_ano_construccion);
-select 'buque no existe, se agrego satisfactoriamente el nuevo registro' into estado;
-end if;
-
-END //
-DELIMITER ;
-
-set @p_ID_buque_IMO = '9236250'; 
-set @p_nombre_buque = 'POSEIDON I';  
-set @p_categoria_buque = 'Crude Oil Tanker';
-set @p_tipo_buque = 'VLCC';
-set @p_bandera = 'Panama [PA]';
-set @p_TPM = 305796;
-set @p_largo_total = 332 ;
-set @p_ancho_total = 58.05;
-set @p_ano_construccion = '2002' ;
-
-call SP_insertar_registro_buque (@p_ID_buque_IMO, @p_nombre_buque, @p_categoria_buque, @p_tipo_buque, @p_bandera, @p_TPM, @p_largo_total, @p_ancho_total, @p_ano_construccion, @retorno);
-select @retorno as estado;
-
-select * from buque
-order by nombre_buque;
-
-
--- 3.- CREACIÓN DE STORED PROCEDURES PARA ELIMINAR REGISTROS DE LA TABLA BUQUE
-
-
-drop procedure if exists SP_eliminar_registro_buque;
-DELIMITER //
-CREATE PROCEDURE SP_eliminar_registro_buque (in p_ID_buque_IMO int, 
-out estado varchar(250))
-BEGIN
-if(select count(ID_buque_IMO) from buque
-where ID_buque_IMO=p_ID_buque_IMO) = 0 then 
-select 'IMO del buque no existe, no es posible borrar registro' into estado;
-else 
-delete from buque 
-where ID_buque_IMO=p_ID_buque_IMO;
-select 'registro ubicado, se elimino satisfactoriamente' into estado;
-end if;
-
-END //
-DELIMITER ;
-
-set @p_ID_buque_IMO = '9236250'; 
-call SP_eliminar_registro_buque (@p_ID_buque_IMO, @retorno);
-select @retorno as estado;
-
-select * from buque
-order by nombre_buque;
-
-
--- 1.- CREACIÓN DE TRIGGER
-
-Drop table if  exists LOG_AUDITORIA_TERMINAL_C;
-CREATE TABLE IF NOT EXISTS LOG_AUDITORIA_TERMINAL_C
-(
-ID_LOG INT AUTO_INCREMENT ,
-NOMBRE_CLIENTE varchar(200),
-ID_CLIENTE INT NOT NULL,
-NOMBRE_DE_ACCION VARCHAR(10) ,
-NOMBRE_TABLA VARCHAR(50) ,
-USUARIO VARCHAR(100) ,
-FECHA_ACCION DATE ,
-HORA_ACCION TIME , 
-PRIMARY KEY (ID_LOG)
-)
-;
-
-drop table if  exists LOG_AUDITORIA_TERMINAL_B;
-CREATE TABLE IF NOT EXISTS LOG_AUDITORIA_TERMINAL_B
-(
-ID_LOG INT AUTO_INCREMENT ,
-NOMBRE_BUQUE varchar(100),
-ID_BUQUE_IMO INT NOT NULL,
-NOMBRE_DE_ACCION VARCHAR(10) ,
-NOMBRE_TABLA VARCHAR(50) ,
-USUARIO VARCHAR(100) ,
-FECHA_ACCION DATE ,
-HORA_ACCION TIME , 
-PRIMARY KEY (ID_LOG)
-)
-;
-
-drop table if  exists LOG_AUDITORIA_TERMINAL_B_2;
-CREATE TABLE IF NOT EXISTS LOG_AUDITORIA_TERMINAL_B_2
-(
-ID_LOG INT AUTO_INCREMENT ,
-NOMBRE_BUQUE_ANTERIOR varchar(100), 
-NOMBRE_BUQUE_ACTUAL varchar(100),
-ID_BUQUE_IMO INT NOT NULL,
-NOMBRE_DE_ACCION VARCHAR(10) ,
-NOMBRE_TABLA VARCHAR(50) ,
-USUARIO VARCHAR(100) ,
-FECHA_ACCION DATE ,
-HORA_ACCION TIME , 
-PRIMARY KEY (ID_LOG)
-)
-;
-
--- DROP TRIGGER TRG_LOG_CLIENTE ;
-DELIMITER //
-CREATE TRIGGER TRG_LOG_CLIENTE AFTER INSERT ON TERMINAL.CLIENTE
-FOR EACH ROW 
-BEGIN
-
-INSERT INTO LOG_AUDITORIA_TERMINAL_C (NOMBRE_CLIENTE, ID_CLIENTE, NOMBRE_DE_ACCION , NOMBRE_TABLA , USUARIO,FECHA_ACCION, HORA_ACCION)
-VALUES ( NEW.nombre_cliente  ,NEW.ID_cliente, 'INSERT' , 'CLIENTE' ,CURRENT_USER() , NOW(), CURRENT_TIME());
-
-END//
-DELIMITER ;
-
-INSERT INTO cliente (`ID_cliente`,`nombre_cliente`, `direccion_cliente`,`telefono_cliente`, `correo_cliente`) VALUES (10, 'ATLANTIC TRADING & MARKETING INC', '5847 San Felipe St # 2100, Houston, TX 77057, Estados Unidos', '17132432200','presse@totalenergies.com');
-INSERT INTO cliente (`ID_cliente`,`nombre_cliente`, `direccion_cliente`,`telefono_cliente`, `correo_cliente`) VALUES (11, 'REPSOL TRADING,S.A', 'Calle Mendez Alvaro, 44, Madrid, 28045 , Madrid', '917538100','carlos.perezdecea@repsol.com');
-INSERT INTO cliente (`ID_cliente`,`nombre_cliente`, `direccion_cliente`,`telefono_cliente`, `correo_cliente`) VALUES (12, 'DELTA LIMITED LIABILITY COMPANY', '25, Grekivska str., c. Kharkiv, 61000, Ukraine', '577197788','info@rada.com.ua');
-INSERT INTO cliente (`ID_cliente`,`nombre_cliente`, `direccion_cliente`,`telefono_cliente`, `correo_cliente`) VALUES (13, 'CUBAMETALES', 'Calle 10 No. 512 e/ 5ta y 31, Playa, La Habana, Cuba', '5372144341', 'procubainfo@mincex.gob.cu');
-
-SELECT * FROM CLIENTE;
-SELECT * FROM LOG_AUDITORIA_TERMINAL_C;
-
-
--- DROP TRIGGER TRG_LOG_BUQUE ;
-DELIMITER //
-CREATE TRIGGER TRG_LOG_BUQUE AFTER INSERT ON TERMINAL.BUQUE
-FOR EACH ROW 
-BEGIN
-
-INSERT INTO LOG_AUDITORIA_TERMINAL_B (NOMBRE_BUQUE, ID_BUQUE_IMO, NOMBRE_DE_ACCION , NOMBRE_TABLA , USUARIO,FECHA_ACCION, HORA_ACCION)
-VALUES ( NEW.nombre_buque  ,NEW.ID_buque_IMO, 'INSERT' , 'CLIENTE' ,CURRENT_USER() , NOW(), CURRENT_TIME());
-
-END//
-DELIMITER ;
-
-INSERT INTO buque (`ID_buque_IMO`,`nombre_buque`, `categoria_buque`, `tipo_buque`, `bandera`, `TPM`, `largo_total`, `ancho_total`, `ano_construccion`) VALUES (9236250, 'POSEIDON I', 'Crude Oil Tanker', 'VLCC', 'Panama [PA]', '305796.00', '332.00', '58.05', '2002');
-
-SELECT * FROM BUQUE;
-SELECT * FROM LOG_AUDITORIA_TERMINAL_B;
-
-
--- DROP TRIGGER TRG_LOG_BUQUE_II ;
-DELIMITER //
-CREATE TRIGGER TRG_LOG_BUQUE_II BEFORE UPDATE ON TERMINAL.BUQUE
-FOR EACH ROW 
-BEGIN
-
-INSERT INTO LOG_AUDITORIA_TERMINAL_B_2 (NOMBRE_BUQUE_ANTERIOR,NOMBRE_BUQUE_ACTUAL, ID_BUQUE_IMO, NOMBRE_DE_ACCION , NOMBRE_TABLA , USUARIO,FECHA_ACCION, HORA_ACCION)
-VALUES ( OLD.nombre_buque , NEW.nombre_buque  ,NEW.ID_buque_IMO, 'UPDATE' , 'CLIENTE' ,CURRENT_USER() , NOW(), CURRENT_TIME());
-
-END//
-DELIMITER ;
-
-UPDATE terminal.buque SET nombre_buque = 'seagrace'  WHERE ID_buque_IMO = 9290309 ; 
-UPDATE terminal.buque SET nombre_buque = 'poseidon i'   WHERE ID_buque_IMO = 9236250 ; 
-
-SELECT * FROM BUQUE;
-SELECT * FROM LOG_AUDITORIA_TERMINAL_B_2;
+-- Dump completed on 2022-10-02 15:04:05
